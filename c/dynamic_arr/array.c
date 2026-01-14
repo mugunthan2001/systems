@@ -1,22 +1,14 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-typedef struct {
-    void* arr_p;
-    uint size;
-    uint type;
-} d_arr_t;
+#include "array.h"
 
 d_arr_t *curr_arr = NULL;
 
-int getsize(int type) {
+static int getsize(int type) {
     if(type == 1) return sizeof(int);
     else if(type == 2) return sizeof(float);
     else return sizeof(char);
 }
 
-char gettype(int type) {
+static char gettype(int type) {
     if(type == 1) return 'd';
     else if(type == 2) return 'f';
     else return 'c';
